@@ -1,6 +1,6 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Client;
+namespace Fmaj\LaposteDatanovaBundle\Client;
 
 use Psr\Log\LoggerInterface;
 

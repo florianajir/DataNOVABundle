@@ -1,8 +1,8 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Service;
+namespace Fmaj\LaposteDatanovaBundle\Service;
 
-use Laposte\DatanovaBundle\Client\ClientInterface;
+use Fmaj\LaposteDatanovaBundle\Client\ClientInterface;
 
 class Downloader
 {

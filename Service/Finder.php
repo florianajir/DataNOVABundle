@@ -1,6 +1,6 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Service;
+namespace Fmaj\LaposteDatanovaBundle\Service;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Config\FileLocator;
@@ -10,7 +10,7 @@ use Symfony\Component\Filesystem\Filesystem;
 class Finder
 {
     const DEFAULT_FORMAT = 'JSON';
-    const RESSOURCES_FOLDER = '@LaposteDatanovaBundle/Resources/dataset';
+    const RESSOURCES_FOLDER = '@FmajLaposteDatanovaBundle/Resources/dataset';
 
     /** @var Filesystem $filesystem */
     private $filesystem;

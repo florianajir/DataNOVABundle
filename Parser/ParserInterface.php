@@ -1,6 +1,6 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Parser;
+namespace Fmaj\LaposteDatanovaBundle\Parser;
 
 interface ParserInterface
 {

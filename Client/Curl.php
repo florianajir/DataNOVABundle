@@ -1,5 +1,5 @@
 <?php
-namespace Laposte\DatanovaBundle\Client;
+namespace Fmaj\LaposteDatanovaBundle\Client;
 
 use Exception;
 use Psr\Log\LoggerInterface;

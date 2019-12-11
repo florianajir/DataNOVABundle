@@ -1,13 +1,13 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Manager;
+namespace Fmaj\LaposteDatanovaBundle\Manager;
 
-use Laposte\DatanovaBundle\Model\Download;
-use Laposte\DatanovaBundle\Model\Search;
-use Laposte\DatanovaBundle\Client\ClientInterface;
-use Laposte\DatanovaBundle\Service\Downloader;
-use Laposte\DatanovaBundle\Service\Finder;
-use Laposte\DatanovaBundle\Parser\ParserInterface;
+use Fmaj\LaposteDatanovaBundle\Model\Download;
+use Fmaj\LaposteDatanovaBundle\Model\Search;
+use Fmaj\LaposteDatanovaBundle\Client\ClientInterface;
+use Fmaj\LaposteDatanovaBundle\Service\Downloader;
+use Fmaj\LaposteDatanovaBundle\Service\Finder;
+use Fmaj\LaposteDatanovaBundle\Parser\ParserInterface;
 use Psr\Log\LoggerInterface;
 
 class RecordsManager

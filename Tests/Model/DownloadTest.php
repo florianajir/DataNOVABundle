@@ -1,8 +1,8 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Tests\Model;
+namespace Fmaj\LaposteDatanovaBundle\Tests\Model;
 
-use Laposte\DatanovaBundle\Model\Download;
+use Fmaj\LaposteDatanovaBundle\Model\Download;
 
 class DownloadTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Controller;
+namespace Fmaj\LaposteDatanovaBundle\Controller;
 
-use Laposte\DatanovaBundle\Model\Download;
-use Laposte\DatanovaBundle\Model\Search;
+use Fmaj\LaposteDatanovaBundle\Model\Download;
+use Fmaj\LaposteDatanovaBundle\Model\Search;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 

@@ -1,13 +1,14 @@
-# DatanovaBundle
+# LaPoste DataNOVA-bundle
 
 [![Build Status](https://travis-ci.org/florianajir/datanova-bundle.svg?branch=master)](https://travis-ci.org/florianajir/datanova-bundle) [![Code Coverage](https://scrutinizer-ci.com/g/florianajir/datanova-bundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/florianajir/datanova-bundle/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/florianajir/datanova-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/florianajir/datanova-bundle/?branch=master)
 
-[![Latest Stable Version](https://poser.pugx.org/florianajir/datanova-bundle/v/stable)](https://packagist.org/packages/florianajir/datanova-bundle) [![Total Downloads](https://poser.pugx.org/florianajir/datanova-bundle/downloads)](https://packagist.org/packages/florianajir/datanova-bundle) [![Latest Unstable Version](https://poser.pugx.org/florianajir/datanova-bundle/v/unstable)](https://packagist.org/packages/florianajir/datanova-bundle) [![License](https://poser.pugx.org/florianajir/datanova-bundle/license)](https://packagist.org/packages/florianajir/datanova-bundle)
+[![Packagist](https://img.shields.io/packagist/v/florianajir/datanova-bundle.svg?maxAge=2592000)](https://packagist.org/packages/florianajir/datanova-bundle) [![Packagist](https://img.shields.io/packagist/dt/florianajir/datanova-bundle.svg?maxAge=2592000)](https://packagist.org/packages/florianajir/datanova-bundle) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/florianajir/datanova-bundle/master/LICENSE)
 
-Connect your symfony2 project to DataNOVA (La Poste Open Data API)
+LaPoste DataNOVA (open-data API) client and proxy [Symfony](http://symfony.com) bundle.
+
+Fetch and/or search in datasets from LaPoste DataNOVA.
 
 ## Installation
-
 
 ### Step 1: Download the Bundle
 
@@ -38,7 +39,7 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             // ...
-            new Laposte\DatanovaBundle\LaposteDatanovaBundle(),
+            new Fmaj\LaposteDatanovaBundle\FmajLaposteDatanovaBundle(),
         );
 
         // ...
@@ -55,7 +56,7 @@ in the `app/routing.yml` file of your project:
 
 ```yml
 data_nova:
-    resource: "@LaposteDatanovaBundle/Resources/config/routing.yml"
+    resource: "@FmajLaposteDatanovaBundle/Resources/config/routing.yml"
     prefix:   /datanova
 ```
 

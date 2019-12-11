@@ -1,8 +1,8 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Tests\Model;
+namespace Fmaj\LaposteDatanovaBundle\Tests\Model;
 
-use Laposte\DatanovaBundle\Parser\JsonParser;
+use Fmaj\LaposteDatanovaBundle\Parser\JsonParser;
 
 class JsonParserTest extends \PHPUnit_Framework_TestCase
 {
@@ -31,11 +31,11 @@ class JsonParserTest extends \PHPUnit_Framework_TestCase
      * @param string $dataset
      * @param string $path
      *
-     * @return \PHPUnit_Framework_MockObject_MockObject|\Laposte\DatanovaBundle\Service\Finder
+     * @return \PHPUnit_Framework_MockObject_MockObject|\Fmaj\LaposteDatanovaBundle\Service\Finder
      */
     private function getFinderMock($dataset, $path)
     {
-        $finder = $this->getMockBuilder('Laposte\DatanovaBundle\Service\Finder')
+        $finder = $this->getMockBuilder('Fmaj\LaposteDatanovaBundle\Service\Finder')
             ->disableOriginalConstructor()
             ->getMock();
 

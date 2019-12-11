@@ -1,8 +1,8 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Tests\Model;
+namespace Fmaj\LaposteDatanovaBundle\Tests\Model;
 
-use Laposte\DatanovaBundle\Parser\CsvParser;
+use Fmaj\LaposteDatanovaBundle\Parser\CsvParser;
 
 class CsvParserTest extends \PHPUnit_Framework_TestCase
 {
@@ -32,11 +32,11 @@ class CsvParserTest extends \PHPUnit_Framework_TestCase
      * @param string $dataset
      * @param string $path
      *
-     * @return \PHPUnit_Framework_MockObject_MockObject|\Laposte\DatanovaBundle\Service\Finder
+     * @return \PHPUnit_Framework_MockObject_MockObject|\Fmaj\LaposteDatanovaBundle\Service\Finder
      */
     private function getFinderMock($dataset, $path)
     {
-        $mock = $this->getMockBuilder('Laposte\DatanovaBundle\Service\Finder')
+        $mock = $this->getMockBuilder('Fmaj\LaposteDatanovaBundle\Service\Finder')
             ->disableOriginalConstructor()
             ->getMock();
         $mock->expects($this->once())

@@ -1,6 +1,6 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Model;
+namespace Fmaj\LaposteDatanovaBundle\Model;
 
 class Download extends Parameters
 {

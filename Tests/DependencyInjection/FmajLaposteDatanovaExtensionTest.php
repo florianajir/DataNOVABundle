@@ -1,17 +1,17 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Tests\DependencyInjection;
+namespace Fmaj\LaposteDatanovaBundle\Tests\DependencyInjection;
 
-use Laposte\DatanovaBundle\DependencyInjection\LaposteDatanovaExtension;
+use Fmaj\LaposteDatanovaBundle\DependencyInjection\FmajLaposteDatanovaExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * @author Florian Ajir <florianajir@gmail.com>
  */
-class LaposteDatanovaExtensionTest extends \PHPUnit_Framework_TestCase
+class FmajLaposteDatanovaExtensionTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var LaposteDatanovaExtension
+     * @var FmajLaposteDatanovaExtension
      */
     private $extension;
 
@@ -23,11 +23,11 @@ class LaposteDatanovaExtensionTest extends \PHPUnit_Framework_TestCase
     private $root;
 
     /**
-     * @return LaposteDatanovaExtension
+     * @return FmajLaposteDatanovaExtension
      */
     protected function getExtension()
     {
-        return new LaposteDatanovaExtension();
+        return new FmajLaposteDatanovaExtension();
     }
 
     /**

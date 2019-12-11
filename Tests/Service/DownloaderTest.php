@@ -1,8 +1,8 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Tests\Model;
+namespace Fmaj\LaposteDatanovaBundle\Tests\Model;
 
-use Laposte\DatanovaBundle\Service\Downloader;
+use Fmaj\LaposteDatanovaBundle\Service\Downloader;
 
 class DownloaderTest extends \PHPUnit_Framework_TestCase
 {
@@ -27,21 +27,21 @@ class DownloaderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|\Laposte\DatanovaBundle\Client\ClientInterface
+     * @return \PHPUnit_Framework_MockObject_MockObject|\Fmaj\LaposteDatanovaBundle\Client\ClientInterface
      */
     private function getClientMock()
     {
-        return $this->getMockBuilder('Laposte\DatanovaBundle\Client\ClientInterface')
+        return $this->getMockBuilder('Fmaj\LaposteDatanovaBundle\Client\ClientInterface')
             ->disableOriginalConstructor()
             ->getMock();
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|\Laposte\DatanovaBundle\Service\Finder
+     * @return \PHPUnit_Framework_MockObject_MockObject|\Fmaj\LaposteDatanovaBundle\Service\Finder
      */
     private function getFinderMock()
     {
-        return $this->getMockBuilder('Laposte\DatanovaBundle\Service\Finder')
+        return $this->getMockBuilder('Fmaj\LaposteDatanovaBundle\Service\Finder')
             ->disableOriginalConstructor()
             ->getMock();
     }

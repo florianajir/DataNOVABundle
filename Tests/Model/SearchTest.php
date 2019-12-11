@@ -1,8 +1,8 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Tests\Model;
+namespace Fmaj\LaposteDatanovaBundle\Tests\Model;
 
-use Laposte\DatanovaBundle\Model\Search;
+use Fmaj\LaposteDatanovaBundle\Model\Search;
 
 class SearchTest extends \PHPUnit_Framework_TestCase
 {

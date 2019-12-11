@@ -1,7 +1,7 @@
 <?php
-namespace Laposte\DatanovaBundle\Command;
+namespace Fmaj\LaposteDatanovaBundle\Command;
 
-use Laposte\DatanovaBundle\Service\Downloader;
+use Fmaj\LaposteDatanovaBundle\Service\Downloader;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

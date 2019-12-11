@@ -1,8 +1,8 @@
 <?php
 
-namespace Laposte\DatanovaBundle\Parser;
+namespace Fmaj\LaposteDatanovaBundle\Parser;
 
-use Laposte\DatanovaBundle\Service\Finder;
+use Fmaj\LaposteDatanovaBundle\Service\Finder;
 
 class JsonParser implements ParserInterface
 {
