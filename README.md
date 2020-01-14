@@ -16,7 +16,7 @@ Open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
 
 ```bash
-$ composer require florianajir/datanova-bundle "dev-master"
+$ composer require florianajir/datanova-bundle
 ```
 
 This command requires you to have Composer installed globally, as explained
@@ -26,33 +26,22 @@ of the Composer documentation.
 ### Step 2: Enable the Bundle
 
 Then, enable the bundle by adding it to the list of registered bundles
-in the `app/AppKernel.php` file of your project:
+in the `src/config/bundles.php` file of your project:
 
 ```php
 <?php
-// app/AppKernel.php
-
-// ...
-class AppKernel extends Kernel
-{
-    public function registerBundles()
-    {
-        $bundles = array(
-            // ...
-            new Fmaj\LaposteDatanovaBundle\FmajLaposteDatanovaBundle(),
-        );
-
-        // ...
-    }
-
+// src/config/bundles.php
+return [
     // ...
-}
+    Fmaj\LaposteDatanovaBundle\FmajLaposteDatanovaBundle::class => ['all' => true],
+    // ...
+];
 ```
 
 ### Step 3: Using API proxy
 
 To use the bundle proxy API, import the bundle routing file 
-in the `app/routing.yml` file of your project:
+in the `src/config/routing.yml` file of your project:
 
 ```yml
 data_nova:
@@ -100,4 +89,4 @@ Options:
   -f, --force-replace   If set, the command will replace local storage
 ```
 
-`Example: php app/console datanova:download:dataset laposte_hexasmal json -f`
+`Example: php bin/console datanova:download:dataset laposte_hexasmal json -f`
