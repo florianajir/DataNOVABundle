@@ -49,7 +49,7 @@ class FmajLaposteDatanovaExtensionTest extends TestCase
 
     public function testGetConfigWithDefaultValues()
     {
-        $this->extension->load(array(), $container = $this->getContainer());
+        $this->extension->load([], $container = $this->getContainer());
 
         $this->assertTrue($container->has('data_nova.manager.records'));
     }

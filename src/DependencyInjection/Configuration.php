@@ -17,6 +17,12 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        return new TreeBuilder('data_nova');
+        $treeBuilder = new TreeBuilder('data_nova');
+
+        if (!\method_exists($treeBuilder, 'getRootNode')) {
+            $treeBuilder->root('data_nova');
+        }
+
+        return $treeBuilder;
     }
 }
