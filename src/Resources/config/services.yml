@@ -1,0 +1,55 @@
+parameters:
+    data_nova.server_url: 'http://datanova.laposte.fr'
+    data_nova.api.version: '1.0'
+    data_nova.client.timeout: 3.0
+    data_nova.download_dir: '@@FmajLaposteDatanovaBundle/Resources/dataset'
+
+services:
+    data_nova.client.curl_client:
+        class: Fmaj\LaposteDatanovaBundle\Client\Curl
+        arguments:
+            - '%data_nova.server_url%'
+            - '%data_nova.api.version%'
+        calls:
+            - ['setLogger', ['@?logger']]
+            - ['setTimeout', ['%data_nova.client.timeout%']]
+
+    data_nova.service.downloader:
+        class: Fmaj\LaposteDatanovaBundle\Service\Downloader
+        arguments:
+            - '@data_nova.client.curl_client'
+            - '@data_nova.service.finder'
+
+    data_nova.service.finder:
+        class: Fmaj\LaposteDatanovaBundle\Service\Finder
+        arguments:
+            - '@filesystem'
+            - '@file_locator'
+            - '%data_nova.download_dir%'
+        calls:
+            - ['setLogger', ['@?logger']]
+
+    data_nova.parser.csv:
+        class: Fmaj\LaposteDatanovaBundle\Parser\CsvParser
+        arguments:
+            - '@data_nova.service.finder'
+
+    data_nova.parser.json:
+        class: Fmaj\LaposteDatanovaBundle\Parser\JsonParser
+        arguments:
+            - '@data_nova.service.finder'
+
+    data_nova.manager.records:
+        class: Fmaj\LaposteDatanovaBundle\Manager\RecordsManager
+        arguments:
+            - '@data_nova.client.curl_client'
+            - '@data_nova.service.downloader'
+            - '@data_nova.service.finder'
+        calls:
+            - ['setLogger', ['@?logger']]
+            - ['addParser', ['@data_nova.parser.json']]
+            - ['addParser', ['@data_nova.parser.csv']]
+
+    data_nova.command.download_dataset:
+        class: Fmaj\LaposteDatanovaBundle\Command\DownloadDatasetCommand
+        arguments: ['@data_nova.service.downloader']

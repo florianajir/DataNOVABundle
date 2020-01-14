@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <project name="florianajir/datanova-bundle" basedir="./" default="help">
-  <property name="builddir" value="build"/>
-  <property name="tests" value="Tests"/>
+  <property name="builddir" value="src/build"/>
+  <property name="tests" value="test"/>
   <property name="logs" value="${builddir}/logs"/>
   <property name="docs" value="${builddir}/docs"/>
 
@@ -13,7 +13,7 @@
     <exclude name="${logs}/"/>
     <exclude name="${docs}/"/>
   </fileset>
-  <fileset id="tests" dir="${tests}">
+  <fileset id="tests" dir="tests">
     <include name="**/*Test.php"/>
   </fileset>
   <fileset id="sourcesWithoutTests" dir="./">

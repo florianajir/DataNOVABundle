@@ -83,7 +83,7 @@ data_nova:
 
 #### Download dataset (server cache)
 
-To improve search performances, use the `data_nova:download:dataset` command to cache dataset for better web search performances. More details in [dataset download command documentation](Resources/dataset/README.md).
+To improve search performances, use the `data_nova:download:dataset` command to cache dataset for better web search performances. More details in [dataset download command documentation](src/Resources/dataset/README.md).
 
 ```bash
 # /bin/bash
