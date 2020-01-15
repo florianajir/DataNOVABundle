@@ -5,10 +5,13 @@
 /phpunit.xml
 
 # Build data
-/build/
+src/build/
 
 # Composer PHAR
 /composer.phar
 
 # IDE prefs
 /.idea/
+
+.phpunit.result.cache
+composer.lock

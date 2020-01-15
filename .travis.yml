@@ -1,31 +1,58 @@
 language: php
-php:
-  - 5.3
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
+sudo: false
+dist: xenial
+
+cache:
+  directories:
+    - $HOME/.composer/cache
 
 env:
-  - SYMFONY_VERSION=2.3.*
-  - SYMFONY_VERSION=2.7.*
-  - SYMFONY_VERSION=2.8.*
-  - SYMFONY_VERSION=3.0.*
+  global:
+    - COMPOSER_MEMORY_LIMIT=-1
 
-matrix:
-  exclude:
-    - php: 5.3
-      env: SYMFONY_VERSION=3.0.*
-    - php: 5.4
-      env: SYMFONY_VERSION=3.0.*
+before_install:
+  - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{,.disabled} || echo "xdebug not available"
+  - composer self-update
+  - composer global require --no-progress --no-scripts --no-plugins symfony/flex dev-master
 
-before_script:
-    - composer self-update
-    - composer require symfony/framework-bundle:${SYMFONY_VERSION} --prefer-source --no-update  --no-interaction
-    - composer update --prefer-source --dev --no-interaction
+install:
+  - travis_retry composer update -n --prefer-dist --prefer-stable
 
 script:
-    - bin/phpunit --coverage-text
+  - ./vendor/bin/phpunit -v
+
+jobs:
+  include:
+    - php: 7.1
+      env: LOWEST SYMFONY_DEPRECATIONS_HELP=weak SYMFONY_REQUIRE="3.4.*"
+      install:
+        - travis_retry composer update -n --prefer-lowest --prefer-stable --prefer-dist
+
+    - php: 7.2
+      install:
+        - travis_retry composer update -n --prefer-dist
+
+    - php: 7.3
+      install:
+        - travis_retry composer update -n --prefer-dist
+
+    # Test against latest Symfony 3.4
+    - php: 7.4
+      env: SYMFONY_REQUIRE="3.4.*"
+      install:
+        - travis_retry composer update -n --prefer-dist
+
+    # Test against latest Symfony 4.4
+    - php: 7.4
+      env: SYMFONY_REQUIRE="4.4.*"
+      install:
+        - travis_retry composer update -n --prefer-dist
+
+    # Test against latest Symfony 5.0
+    - php: 7.4
+      env: SYMFONY_REQUIRE="5.0.*"
+      install:
+        - travis_retry composer update -n --prefer-dist
 
 notifications:
   email:
